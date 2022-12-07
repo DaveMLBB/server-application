@@ -25,9 +25,13 @@ class ServerApplicationTests {
 	}
 
 	@Test
-	void  getAllEmployees(){
+	void  getAllEmployeesAndDelete(){
 		List<Employee> employeeList = employeeDao.getAllEmployee();
 		System.out.println(employeeList);
+		for (Employee employee:employeeList
+			 ) {
+			deleteEmployee(employee);
+		}
 	}
 
 }
