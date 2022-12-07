@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
 class ServerApplicationTests {
 
@@ -20,6 +22,12 @@ class ServerApplicationTests {
 		employee.setLocation("InsertLocation");
 		employee.setBranch("InsertBranch");
 		employeeDao.save(employee);
+	}
+
+	@Test
+	void  getAllEmployees(){
+		List<Employee> employeeList = employeeDao.getAllEmployee();
+		System.out.println(employeeList);
 	}
 
 }
