@@ -18,19 +18,19 @@ class ServerApplicationTests {
 	void addEmployeeTest(){
 
 		Employee employee = new Employee();
-		employee.setName("InsertName");
-		employee.setLocation("InsertLocation");
-		employee.setBranch("InsertBranch");
+		employee.setName("geppetto");
+		employee.setLocation("roma");
+		employee.setBranch("falegname");
 		employeeDao.save(employee);
 	}
 
-	@Test
+	//@Test
 	void  getAllEmployeesAndDelete(){
 		List<Employee> employeeList = employeeDao.getAllEmployee();
 		System.out.println(employeeList);
 		for (Employee employee:employeeList
 			 ) {
-			deleteEmployee(employee);
+			employeeDao.delete(employee.getId());
 		}
 	}
 

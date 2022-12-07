@@ -19,8 +19,8 @@ public class EmployeeDao {
         employeeRepo.save(employee);
     }
 
-    public void delete(Employee employee){
-        employeeRepo.delete(employee);
+    public void delete(Long employeeId){
+        employeeRepo.deleteById(employeeId);
     }
 
     public List<Employee> getAllEmployee(){
