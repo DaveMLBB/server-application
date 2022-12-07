@@ -15,8 +15,9 @@ public class EmployeeDao {
     @Autowired
     private EmployeeRepo employeeRepo;
 
-    public void save(Employee employee){
+    public Employee save(Employee employee){
         employeeRepo.save(employee);
+        return employee;
     }
 
     public void delete(Long employeeId){

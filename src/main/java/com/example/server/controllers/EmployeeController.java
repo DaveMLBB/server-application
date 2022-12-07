@@ -20,7 +20,10 @@ public class EmployeeController {
     }
 
     @PostMapping("/save")
-    public void save(@RequestBody Employee employee){
-        employeeDao.save(employee);
+    public Employee save(@RequestBody Employee employee){
+
+       employeeDao.save(employee);
+       return  employee;
+
     }
 }
